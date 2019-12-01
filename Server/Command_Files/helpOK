@@ -1,0 +1,30 @@
+Available commands:
+1.Initialize shop with files.
+savefiles&<client_file>&<product_file>&<category_file>
+
+2.Server data view.
+showpr
+showcli
+showcat
+
+3.Show product from given product category.
+getpc&<category_name>
+
+4.Look for client in client database.
+findcli&<client_email>
+
+5.Get product price for client.
+getprcli&<client_email>.<product_name>
+
+6.Add object to database.
+addcli&<name>&<surname>&<email>&<discount_level>
+addprod&<price>&<name>&<category>&<amount>
+addpc&<name>
+
+7.Delete objects from database.
+delCli&<client_name>
+delPro&<product_name>
+delProCat&<category_name> | Deletes products assigned to category as well.
+
+8.Save database state.
+save

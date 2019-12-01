@@ -1,8 +1,14 @@
 package pl.polsl.lukasz.latusik.lab.server;
 
+import pl.polsl.lukasz.latusik.lab.model.Shop;
+import pl.polsl.lukasz.latusik.lab.server.protocol.InputParser;
+
 import java.io.*;
 import java.net.Socket;
 
+/**
+ The type Server thread.
+ */
 public class ServerThread
 		extends Thread
 		implements AutoCloseable
@@ -12,19 +18,45 @@ public class ServerThread
 	//Closed with socket
 	private BufferedReader input;
 	private PrintWriter output;
-
-	ServerThread(Socket socket) throws IOException{
+	private Shop currentShop;
+	private InputParser inputParser;
+	
+	/**
+	 Instantiates a new Server thread.
+	 
+	 @param socket the socket
+	 @param currentShop the current shop
+	 @param initialMessage the initial message
+	 @param inputParser the input parser
+	 @throws IOException the io exception
+	 */
+	ServerThread(Socket socket, Shop currentShop, String initialMessage, InputParser inputParser) throws IOException{
 		super("Client server thread");
 		this.socket=socket;
 		this.output = new PrintWriter(socket.getOutputStream(), true);
 		this.input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-		sendMessageToClient("Welcome on Java Server!");
+		this.currentShop=currentShop;
+		this.inputParser=inputParser;
+		
+		sendMessageToClient("Welcome on Java Server!\nType \"help\" to get available commands.");
+		sendMessageToClient(initialMessage);
 	}
 	
+	/**
+	 Gets input.
+	 
+	 @return the input
+	 @throws IOException the io exception
+	 */
 	public String getInput() throws IOException {
 		return this.input.readLine();
 	}
 	
+	/**
+	 Send message to client.
+	 
+	 @param message the message
+	 */
 	public void sendMessageToClient (String message){
 		output.println(message);
 	}
@@ -42,7 +74,7 @@ public class ServerThread
 			try {
 				clientInputLine = getInput();
 		} catch (IOException e) {
-			sendMessageToClient(e.toString());
+			sendMessageToClient(e.getStackTrace().toString());
 			break;
 		}
 			if(clientInputLine == null || clientInputLine.equals("exit")){
@@ -50,7 +82,7 @@ public class ServerThread
 				sendMessageToClient("Connection with server has been closed.");
 				break;
 			}
-			sendMessageToClient(clientInputLine);
+			sendMessageToClient(inputParser.analyzeClientInput(clientInputLine));
 		}
 	}
 }

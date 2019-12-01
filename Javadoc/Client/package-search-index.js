@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"pl.polsl.lukasz.latusik.lab.controller"},{"l":"pl.polsl.lukasz.latusik.lab.server"},{"l":"pl.polsl.lukasz.latusik.lab.server.exceptions"}]

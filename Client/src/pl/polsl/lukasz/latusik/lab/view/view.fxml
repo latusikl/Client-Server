@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.polsl.lukasz.latusik.lab.controller.Controller">
+   <children>
+      <Text fill="#00000093" layoutX="1101.0" layoutY="788.0" strokeType="OUTSIDE" strokeWidth="0.0" text="github.com/latusikl" wrappingWidth="85.48291015625">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server output:" wrappingWidth="123.7294921875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="textField" editable="false" layoutX="20.0" layoutY="92.0" opacity="0.49" prefHeight="269.0" prefWidth="655.0" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextArea>
+      <Text fill="#00000093" layoutX="885.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple administrative console for managing library system." textAlignment="CENTER" wrappingWidth="262.0">
+         <font>
+            <Font name="Gubbi" size="11.0" />
+         </font>
+      </Text>
+      <Button fx:id="clearButton" layoutX="428.0" layoutY="456.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Clear output" textFill="#a81e1e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="adminInput" layoutX="20.0" layoutY="400.0" opacity="0.51" prefHeight="41.0" prefWidth="655.0" />
+      <Text fill="#00000093" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Library Manager" textAlignment="CENTER" wrappingWidth="740.265625">
+         <font>
+            <Font name="Lucida Sans Regular" size="27.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator console:" wrappingWidth="218.7294921875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="connectButton" layoutX="563.0" layoutY="456.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Connect" textFill="#a81e1e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="ipField" layoutX="105.0" layoutY="456.0" opacity="0.51" prefHeight="25.0" prefWidth="124.0" promptText="Server IP"/>
+      <TextField fx:id="portField" layoutX="286.0" layoutY="456.0" opacity="0.51" prefHeight="25.0" prefWidth="124.0" promptText="Port number"/>
+      <Text layoutX="20.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server IP:" wrappingWidth="85.48291015625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="239.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port:" wrappingWidth="45.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#00000093" layoutX="889.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" textAlignment="CENTER" wrappingWidth="254.7294921875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+   </children>
+   <stylesheets>
+      <URL value="@bg.css" />
+      <URL value="@font.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,7 @@
+@font-face {
+    src: url('YanoneKaffeesatz-Regular.ttf');
+}
+
+.text {
+    -fx-font-family: "YanoneKaffeesatz";
+}
