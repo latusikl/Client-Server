@@ -3,8 +3,7 @@ Client-Server Shop Manager
 
 ### About ###
 This repository contains simple shop manager implementation.
-Next step will be connecting database.
-Project created to practice usage of Java classes conneed with creating client-server applications.
+Project created to practice usage of Java classes conected with creating client-server applications.
 
 ---
 ### Resources ###
